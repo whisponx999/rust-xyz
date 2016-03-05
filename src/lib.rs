@@ -9,9 +9,9 @@ const MAGIC_NUMBER: u32 = 0x315a5958;  // "XYZ1"
 
 /// Represents an XYZ image.
 pub struct Image {
-    /// Image height in buffer.
+    /// Image height in pixels.
     pub width: u16,
-    /// Image width in buffer.
+    /// Image width in pixels.
     pub height: u16,
     /// List of colors used by the image.
     pub palette: [Color; 256],
