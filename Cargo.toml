@@ -1,0 +1,11 @@
+[package]
+name = "xyz"
+version = "0.1.0"
+authors = ["Chris Wong <lambda.fairy@gmail.com>"]
+
+[dependencies]
+byteorder = "0.4"
+flate2 = "0.2"
+
+[dev-dependencies]
+image = "0.7"
