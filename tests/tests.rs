@@ -22,6 +22,15 @@ fn reading() {
 }
 
 #[test]
+fn errors() {
+    let result = {
+        let mut cursor = PNG_DATA;  // This is not a typo
+        xyz::read(&mut cursor)
+    };
+    assert!(result.is_err());
+}
+
+#[test]
 fn writing() {
     let original = read_from_memory(XYZ_DATA);
     let reconstituted = {
