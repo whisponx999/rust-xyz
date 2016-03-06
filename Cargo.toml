@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Chris Wong <lambda.fairy@gmail.com>"]
 license = "MIT/Apache-2.0"
 description = "Parser for the RPG Maker XYZ image format"
+documentation = "https://lambda.xyz/rust-xyz/xyz/"
 repository = "https://github.com/lfairy/rust-xyz"
 keywords = ["image", "xyz"]
 exclude = ["tests/*"]
