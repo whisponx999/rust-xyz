@@ -1,3 +1,28 @@
+//! Reader and writer for the RPG Maker XYZ image format.
+//!
+//! # Example
+//!
+//! This library works well with the [`image`][1] crate.
+//!
+//! Here's an example of reading an XYZ image into an [`ImageBuffer`][2]:
+//!
+//! ```ignore
+//! extern crate image;
+//! extern crate xyz;
+//!
+//! use image::RgbImage;
+//! use std::fs::File;
+//!
+//! let file = try!(File::open("boat2.xyz"));
+//! let raw = try!(xyz::read(&mut file));
+//! let boat = RgbImage::from_raw(raw.width as u32, raw.height as u32, raw.to_rgb_buffer());
+//! ```
+//!
+//! You can then do something useful with the `boat`.
+//!
+//! [1]: https://github.com/PistonDevelopers/image
+//! [2]: http://www.piston.rs/image/image/struct.ImageBuffer.html
+
 extern crate byteorder;
 extern crate flate2;
 
