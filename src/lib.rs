@@ -39,7 +39,7 @@ pub struct Image {
     /// Image width in pixels.
     pub height: u16,
     /// List of colors used by the image.
-    pub palette: [Color; 256],
+    pub palette: [Rgb; 256],
     /// Image data. This contains `width * height` bytes, one for each
     /// pixel in the image. The color of each pixel is determined by the
     /// `palette` array.
@@ -47,7 +47,7 @@ pub struct Image {
 }
 
 /// Represents a color in RGB form.
-pub type Color = [u8; 3];
+pub type Rgb = [u8; 3];
 
 impl Image {
     /// Converts the image to a raw RGB buffer, suitable for the Piston
