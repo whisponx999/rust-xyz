@@ -59,16 +59,6 @@ impl Image {
     }
 }
 
-// XXX: https://github.com/BurntSushi/byteorder/pull/40
-#[allow(non_snake_case)]
-fn B(e: byteorder::Error) -> io::Error {
-    use byteorder::Error::*;
-    match e {
-        UnexpectedEOF => io::Error::new(io::ErrorKind::UnexpectedEof, UnexpectedEOF),
-        Io(e) => e
-    }
-}
-
 /// Reads an XYZ image.
 pub fn read<R: Read>(reader: &mut R) -> io::Result<Image> {
     let magic = try!(reader.read_u32::<LittleEndian>());
@@ -106,10 +96,10 @@ pub fn read<R: Read>(reader: &mut R) -> io::Result<Image> {
 
 /// Writes an XYZ image.
 pub fn write<W: Write>(image: &Image, writer: &mut W) -> io::Result<()> {
-    try!(writer.write_u32::<LittleEndian>(MAGIC_NUMBER).map_err(B));
+    try!(writer.write_u32::<LittleEndian>(MAGIC_NUMBER));
 
-    try!(writer.write_u16::<LittleEndian>(image.width).map_err(B));
-    try!(writer.write_u16::<LittleEndian>(image.height).map_err(B));
+    try!(writer.write_u16::<LittleEndian>(image.width));
+    try!(writer.write_u16::<LittleEndian>(image.height));
 
     let mut compress = writer.zlib_encode(Compression::Default);
     for slot in image.palette.iter() {

@@ -10,7 +10,7 @@ keywords = ["image", "xyz"]
 exclude = ["tests/*"]
 
 [dependencies]
-byteorder = "0.4"
+byteorder = "0.5"
 flate2 = "0.2"
 
 [dev-dependencies]
