@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["read","Reads an XYZ image."],["write","Writes an XYZ image."]],"struct":[["Image","Represents an XYZ image."]],"type":[["Rgb","Represents a color in RGB form."]]});
